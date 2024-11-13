@@ -1,0 +1,207 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/*font-family: "Ubuntu", sans-serif;*/
+html,body{font-family: "Noto Sans KR", sans-serif; }
+
+.header{ width: 100%; position: fixed; left: 0; right: 0; background-color: #fff; z-index: 10; top: 0; transition:all 0.5s;}
+.h_wrap{width: 90%; padding: 0 5%; max-width: 1400px; margin: 0 auto;display: flex; justify-content: space-between; height: 97px; align-items: center;}
+
+.nav{display: flex;align-items: center;}
+.logo>a{display: block; width: 30%;}
+.menu{display: flex; margin-left: 40px;}
+.menu>li{height: 97px; display: flex; align-items: center;}
+.menu>li>a{display: flex; font-size: 0.8vw; font-weight: 500; margin-right: 28px; align-items: center;}
+
+/*sub*/
+.sub_bg{position: absolute; left: 0; top: 97px;width: 100%; height: 28vw;  border-top: 1px solid #e2e2e2; box-shadow: 0px 10px 10px rgba(205,205,205,0.5); background-color: #fff; z-index: 10; }
+.sub{ width: 100%; max-width: 2000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; padding: 25px 0;}
+.sub>li{width: 13vw; height: 13vw;}
+.sub>li>a{display: block; padding: 1vw; text-align: center; width: 10vw; height: 10vw;}
+.sub>li>a img{width: 100%;}
+
+
+.family{position: relative;}
+.family_btn{width: 9vw;line-height: 250%; font-size: 0.8vw; text-align: left; background: url(../imgs/bg_underline.png) no-repeat left bottom; background-size: 100%; font-weight: 500; display: flex; align-items: center; justify-content: space-between;}
+.family_btn::after{content: "";width: 16px;height: 16px; background: url(../imgs/ico_family-arrow.svg) no-repeat center center; background-size: 50%;}
+
+.family_list{position: absolute; width: 200%; background-color: #fff; border: 2px solid #333; margin-top: 10px; right: 0;}
+.family_list>li>a{display: block;line-height: 250%; padding-left: 15px; font-size: 0.7vw;}
+
+@media all and (max-width:1024px){
+  .menu{display: none;}
+  .nav{order: 2;}
+  .family{order: 3;}
+  .mobile{order: 1;}
+  .logo>a>img{width: 25vw;}
+  .m_btn{width: 5vw; height: 50px;display: flex; flex-direction: column; justify-content: center; cursor: pointer; }
+  .m_btn>span{width: 70%; border-top:2px solid #333; margin: 0.5vw 0;}
+  .m_btn>span:nth-child(2){width: 60%; }
+  .family_btn{width: 20vw; font-size: 2vw;}
+  .family_list>li>a{font-size: 1.5vw;}
+  .logo img{width: 10vw;}
+
+  .m_nav{position: fixed; left: 0; top: 0;z-index: 20;width: 100%; height: 100vh;}
+  .m_nav_bg{width: 100%; height: 100vh;background-color: rgba(0,0,0,0.5);}
+  .m_menu_box{position: fixed; left: 0; top: 0;background-color: #fff; width: 430px; height: 100%; box-sizing: border-box; padding: 22vh 7vw; }
+  .m_close{position: absolute; right: 20px; top: 20px; cursor: pointer;}
+  .m_close img{width: 40px;}
+  .m_menu{margin-bottom: 5vw;}
+  .m_menu>li>a{ font-size: 3vw; line-height: 200%;display: flex;}
+  
+  .m_menu>li:last-child{margin-top: 3vw; }
+  .m_menu>li:last-child>a{font-size: 2vw;}
+  .m_menu>li:last-child>a span{text-decoration: underline;}
+  .m_menu>li:last-child>a::after{content:">" ; margin-left: 15px; }
+  .sns{display: flex;}
+  .sns>li{margin: 0 10px;}
+  .sns>li img{width: 3.5vw;}
+  /*click시 메뉴 나타나는 효과*/
+  .m_menu_box{margin-left: -430px; transition: all 0.3s;}
+  .active{margin-left: 0;}
+
+  /*sub 메뉴*/
+
+  .m_sub_bg{position: absolute; background-color: #fff;left: 7vw; top: 8vh; width: 70%; height: 90%;}
+  .m_sub_close{width: 40px; cursor: pointer; }
+  .m_sub_close img{width: 100%;}
+  
+  .m_sub::before{ display: block; content: "브랜드"; width: 30vw; font-size: 5vw; margin-bottom: 15px;}
+  .m_sub{display: flex; flex-direction: column;}
+  .m_sub>li{list-style: circle; margin-left: 20px;}
+  .m_sub>li>a>p{font-size: 1.5em; line-height: 230%;}
+
+}
+@media all and (max-width:767px){
+  .m_menu_box{width: 70vw;}
+  .m_menu{margin-bottom:15vw ;}
+  .m_menu>li>a{font-size: 6vw; }
+  .m_menu>li:last-child>a{font-size: 4vw;}
+  .sns>li img{width: 7vw;}
+
+   /*click시 메뉴 나타나는 효과*/
+   .m_menu_box{margin-left: -70vw; transition: all 0.3s;}
+   .active{margin-left: 0;}
+
+    /*~767px , sub 메뉴*/
+   .m_sub::before{ display: block; content: "브랜드"; font-size: 10vw; margin-bottom: 15px;}
+  .m_sub>li>a{font-size: 2vw;display: block; line-height: 200%;}
+  .m_sub_bg{width: 90%; height: 100%;}
+
+}
+
+@media  all and (min-width:1025px) {
+ .mobile{display: none;}
+}
+
+/*main*/
+.main{ width: 100%; height: calc(100vh - 97px);padding-top: 94px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;}
+.main>h2{font-family: "Ubuntu", sans-serif; font-size: 7vw;text-align: center; font-weight: 500; margin: 3vh 0; transition: all 0.7s;}
+.main_slide{width: 35%; display: flex;  justify-content: center;}
+.main_slide>.main_wrap{width: calc(100% - 10vw); position: relative;min-height: 42vh; display: flex; align-items: center; justify-content: center;}
+.main_wrap img{width: 100%; position: absolute; max-height: 100%; }
+.main_wrap img:first-child{transform: scale(-1, 1);}
+.main_wrap img:nth-child(2){width: 15vw;}
+.main_wrap img:nth-child(4){width: 20vw;}
+
+.main_active{ width: 100%; height: calc(100vh - 97px);padding-top: 94px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; background-color: rgb(250, 224, 137); color: white;}
+.maintitle_top_active{color: white;}
+
+.main_banner{position: absolute;z-index: 1; left: 1vw; bottom: 2vh;}
+.main_banner>a{display: block;}
+.main_banner>a>p{ font-weight: 500; text-align: center; margin-bottom: 10px; font-size: 1.2vw;}
+
+.main_banner img:nth-child(2){position: absolute; right: 5vw; top: -4vw; width: 4vw; transform: rotate(-90deg);}
+.main_banner img:nth-child(3){width: 13vw;}
+.main_banner>a::after{content: "Go!";position: absolute; right: 0vw; top: -4vw; font-weight: 600; font-size: 2vw;}
+
+.scr_btn{position: absolute;z-index: 1; right: 3vw; top: 50px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-end;}
+.scr_btn>div{width:8vw; height: 8vw; border: 2px solid black; font-size: 2vw; font-weight: 700; border-radius: 20%; margin-top: 10px; display: flex; justify-content: center; align-items: center; box-shadow: 10px -5px teal;}
+.scr_btn::before{position: relative; top: 10px; right: -10vw; content: "Light"; font-weight: 600; font-size: 0.9vw; margin-bottom: 5px;}
+.scr_btn img{width: 9vw;}
+
+.off{background-color: black; color: white;}
+.on_active{background-color: white; color: black;}
+.off_active{background-color: white; color: black;}
+
+
+@media  all and (max-width:1024px) {
+  .main_slide{width: 40%;}
+  .main_slide>.main_wrap{min-height: 30vh;}
+  .main>h2{font-size: 10vw;}
+  .main_banner>a>p{font-size: 2vw;}
+  .main_banner img:nth-child(3){width: 20vw;}
+  .scr_btn img{width: 5vw;}
+  .scr_btn::before{font-size: 2vw; }
+
+}
+@media  all and (max-width:767px) {
+  .main>h2{font-size: 15vw;}  
+  .main_slide{width: 60%;}
+  .main_banner img:nth-child(3){width: 25vw;}
+  .scr_btn img{width: 7vw;}
+  .scr_btn::before{font-size: 3vw; }
+
+}
+
+/*contents*/
+.contents{width: 100%; padding: 0 4vw; margin-top: 100px; box-sizing: border-box;}
+.conbox{height: 17vw; margin: 20px 0; transition: all 0.5s; overflow: hidden;position: relative;}
+.conbox>a{display: flex;width: 100%; height: 100%;background-color: rgba(0,0,0,0.3); align-items: center; justify-content: space-between; position: absolute; left: 0; top: 0;}
+.conbox>a>img{height: 3.5vw;margin-left: 7vw;}
+.con_title{width: 20%; color: #fff; font-size: 1.8vw;}
+.con_title::after{content: ""; display: block;width: 2.3vw;height: 2.3vw; background: url(../imgs/ico_more.svg) center center no-repeat; background-size: 100%; margin-top: 15px;}
+.boxbg{width: 100%; height: 100%;}
+
+.box1 .boxbg{background: url(../imgs/furniture-3271762_1920.jpg) center bottom no-repeat; background-attachment: fixed; background-size: cover;}
+.box2 .boxbg{background: url(../imgs/desk-6185023_1280.jpg) center top no-repeat; background-attachment: fixed; background-size: cover;}
+.box3 .boxbg{background: url(../imgs/lights-1088141_1280.jpg) center top no-repeat; background-attachment: fixed; background-size: cover;}
+.box4 .boxbg{background: url(../imgs/bedroom-5646321_1280.jpg) center bottom no-repeat; background-attachment: fixed; background-size: cover;}
+.box5 .boxbg{background: url(../imgs/ai-generated-8936264_1280.jpg) center bottom no-repeat; background-attachment: fixed; background-size: cover;}
+.box6 .boxbg{background: url(../imgs/ai-generated-8429679_1280.jpg) center bottom no-repeat; background-attachment: fixed; background-size: cover;}
+
+
+@media all and (max-width:1024px){
+  .conbox{height: 22vw;}
+  .con_title{font-size: 3vw;width: 35%;}
+  .con_title::after{width: 5vw; height: 5vw;}
+  .conbox>a>img{height: 5vw;}
+}
+@media all and (max-width:767px){
+  .conbox{height: 34vw;}
+  .con_title{font-size: 3vw;width: 35%;}
+  .con_title::after{width: 5vw; height: 5vw;}
+  .conbox>a>img{height:8vw;}
+}
+
+.footer{padding: 50px 0;width: 80vw; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.f_menu{display: flex; align-items: center; }
+.f_menu>li>a{display: flex;padding: 5px 10px;font-size: 1vw; align-items: center;}
+.f_menu>li:nth-child(1)>a::after{content: ""; width: 0.8vw; height: 0.8vw; background: url(../imgs/ico_new_window.svg) no-repeat center center; background-size: 100%; margin-left: 5px;}
+
+.f_logo{margin: 1vw 0;}
+.f_txt{font-size: 0.8vw; text-align: center; line-height: 200%;}
+.f_sns{display: flex;margin: 1vw 0;; }
+.f_sns>li{margin: 0 5px;}
+.copyright{font-size: 0.8vw; }
+
+@media all and (max-width:1024px){
+  .f_menu>li>a{font-size: 1.8vw;}
+  .f_menu>li:nth-child(1)>a::after{content: ""; width: 1.5vw; height: 1.5vw;}
+  .f_menu>li:last-child img{width: 5vw;}
+  .f_txt{font-size: 1.4vw;}
+  .f_sns{display: flex;margin: 2vw 0;; }
+  .copyright{font-size: 1.5vw; }
+}
+
+@media all and (max-width:767px){
+  .footer{width: 100%;}
+  .f_menu>li>a{font-size: 3vw;}
+  .f_menu>li:nth-child(1)>a::after{content: ""; width: 2.3vw; height: 2.3vw;}
+  .f_menu>li:last-child img{width: 8vw;}
+  .f_txt{font-size: 3vw;}
+  .f_sns{display: flex;margin: 5vw 0; }
+  .f_sns>li>a>img{width: 6vw; height: 6vw;}
+  .f_sns>li{margin: 0 10px;}
+  .copyright{font-size: 3vw; }
+
+}
